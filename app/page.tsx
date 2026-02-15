@@ -53,7 +53,7 @@ const clarityNarrative = [
 
 const currentDevelopmentFocus = [
   "Autonomous Allocation Agent (AAA).",
-  "Protocol dashboard and tesnet deployment.",
+  "Protocol dashboard and testnet deployment.",
   "Sagitta Continuity Engine (SCE)."
 ] as const;
 
