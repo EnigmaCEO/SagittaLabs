@@ -1,173 +1,140 @@
-Below is a legit, plain-text research notes file that reads like real internal thinking — exploratory, incomplete, and disciplined. It avoids claims, avoids SCE gravity, and fits naturally beside the implementation sketches.
-
-You can drop this in directly as sagitta_research_notes.txt.
-
+==================================================
 Sagitta Research Notes
-Status: Working notes / non-final
-Audience: Internal research and design
+==================================================
+Status   : Working notes / non-final
+Audience : Internal research and design
 
-This document captures exploratory thinking related to capital continuity, stress modeling, and allocator policy tuning. These notes are not specifications and may change as systems evolve.
+Purpose:
+--------
+This document captures exploratory thinking related to capital continuity,
+stress modeling, and allocator policy tuning. These notes are not specifications
+and may evolve as systems and doctrine mature.
 
+==================================================
 Research Area 1: Continuity Model Assumptions
+==================================================
 
 Continuity is treated as a design property, not a runtime guarantee.
 
 Assumptions:
+------------
+- Capital systems will experience partial failure rather than total collapse
+- Not all subsystems fail simultaneously
+- Human intervention may be delayed, unavailable, or conflicting
+- Data inputs may degrade before systems fully fail
 
-Capital systems will experience partial failure rather than total collapse
-
-Not all subsystems fail simultaneously
-
-Human intervention may be delayed, unavailable, or conflicting
-
-Data inputs may degrade before systems fully fail
-
-Continuity design prioritizes:
-
-bounded behavior under uncertainty
-
-preservation of core invariants
-
-graceful degradation over optimization
-
-recovery paths that do not require perfect information
+Design priorities:
+------------------
+- Bounded behavior under uncertainty
+- Preservation of core invariants
+- Graceful degradation over optimization
+- Recovery paths that do not require perfect information
 
 Open questions:
+---------------
+- What minimum signal set is required to maintain safe operation?
+- How long can systems operate under stale or degraded data?
+- Which invariants must never be violated, even under extreme uncertainty?
 
-What minimum signal set is required to maintain safe operation?
-
-How long can systems operate under stale or degraded data?
-
-Which invariants must never be violated, even under extreme uncertainty?
-
+==================================================
 Research Area 2: Capital Stress Scenarios (Placeholders)
+==================================================
 
-These scenarios are conceptual placeholders used to test assumptions, not predictions.
+These scenarios are conceptual placeholders used to test assumptions,
+not predictions.
 
 Scenario classes under consideration:
-
-Liquidity contraction across correlated assets
-
-Pricing oracle divergence or staleness
-
-Volatility regime shifts exceeding historical norms
-
-Counterparty or venue unavailability
-
-Governance paralysis or delayed coordination
+-------------------------------------
+- Liquidity contraction across correlated assets
+- Pricing oracle divergence or staleness
+- Volatility regime shifts exceeding historical norms
+- Counterparty or venue unavailability
+- Governance paralysis or delayed coordination
 
 Stress modeling goals:
-
-identify invariant breakpoints
-
-understand compounding failure effects
-
-observe allocator behavior under constraint tightening
-
-measure recovery latency rather than peak loss
+---------------------
+- Identify invariant breakpoints
+- Understand compounding failure effects
+- Observe allocator behavior under constraint tightening
+- Measure recovery latency rather than peak loss
 
 Open questions:
+---------------
+- Which stress signals matter earliest?
+- How should constraint strictness change under stress?
+- When is inaction safer than forced reallocation?
 
-Which stress signals matter earliest?
-
-How should constraint strictness change under stress?
-
-When is inaction safer than forced reallocation?
-
+==================================================
 Research Area 3: Policy Tuning and Constraint Design
+==================================================
 
 Policy tuning focuses on constraint behavior, not performance maximization.
 
 Primary tuning dimensions:
-
-position concentration limits
-
-liquidity sensitivity
-
-rebalance frequency
-
-volatility tolerance
-
-regime transition thresholds
+--------------------------
+- Position concentration limits
+- Liquidity sensitivity
+- Rebalance frequency
+- Volatility tolerance
+- Regime transition thresholds
 
 Design principles:
-
-constraints should be explicit and reviewable
-
-constraint interactions should be predictable
-
-policy behavior should degrade conservatively
-
-policies should avoid hidden optimization pressure
+------------------
+- Constraints should be explicit and reviewable
+- Constraint interactions should be predictable
+- Policy behavior should degrade conservatively
+- Policies should avoid hidden optimization pressure
 
 Observed tensions:
-
-responsiveness versus stability
-
-diversification versus liquidity depth
-
-drawdown avoidance versus recovery participation
+------------------
+- Responsiveness versus stability
+- Diversification versus liquidity depth
+- Drawdown avoidance versus recovery participation
 
 Open questions:
+---------------
+- How conservative should default policies be?
+- Should policies self-tighten under uncertainty?
+- How much policy discretion is acceptable before review?
 
-How conservative should default policies be?
-
-Should policies self-tighten under uncertainty?
-
-How much policy discretion is acceptable before review?
-
+==================================================
 Research Area 4: Decision Interpretability
+==================================================
 
 Decision interpretability is treated as a first-order research concern.
 
 Assumptions:
-
-decisions will be reviewed after the fact
-
-reviewers may not be the original designers
-
-explanation quality affects governance trust
+------------
+- Decisions will be reviewed after the fact
+- Reviewers may not be the original designers
+- Explanation quality affects governance trust
 
 Research focus:
-
-minimal explanation sets
-
-separating signal from narrative
-
-avoiding post-hoc rationalization
-
-aligning explanations with doctrine language
+---------------
+- Minimal explanation sets
+- Separating signal from narrative
+- Avoiding post-hoc rationalization
+- Aligning explanations with doctrine language
 
 Open questions:
+---------------
+- What is the smallest explanation that preserves meaning?
+- How should uncertainty be communicated?
+- When should explanations defer to constraints rather than signals?
 
-What is the smallest explanation that preserves meaning?
-
-How should uncertainty be communicated?
-
-When should explanations defer to constraints rather than signals?
-
+==================================================
 Research Area 5: Long-Horizon Behavior
+==================================================
 
 Sagitta systems are expected to operate over long horizons.
 
 Considerations:
-
-policy drift over time
-
-regime bias accumulation
-
-silent constraint erosion
-
-operator complacency
+---------------
+- Policy drift over time
+- Regime bias accumulation
+- Silent constraint erosion
+- Operator complacency
 
 Research directions:
-
-periodic policy review cadence
-
-drift detection heuristics
-
-long-horizon simulation runs
-
-institutional memory via Decision Records
-
-End of research notes.
+--------------------
+- Periodic policy review
