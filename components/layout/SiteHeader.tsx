@@ -36,20 +36,6 @@ export function SiteHeader() {
                 ))}
               </ul>
             </nav>
-            <div className="order-2 ml-auto flex items-center gap-2 md:order-3 md:ml-0">
-              <button
-                type="button"
-                className="rounded-full border border-white/25 bg-white/[0.02] px-3 py-1.5 text-xs text-slate-200"
-              >
-                Log In
-              </button>
-              <Link
-                href="/contact"
-                className="rounded-full bg-gradient-to-r from-electric to-cyanflare px-3 py-1.5 text-xs font-semibold text-white"
-              >
-                Start
-              </Link>
-            </div>
           </div>
         </div>
       </div>

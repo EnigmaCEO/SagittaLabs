@@ -39,31 +39,38 @@ export default function DocsPage() {
       <PageHero
         eyebrow="Docs"
         title="Sagitta whitepaper and protocol references"
-        description="Live GitBook chapters plus downloadable support artifacts for review workflows."
+        description="Read each whitepaper chapter directly on this site, with canonical GitBook links for source reference."
       />
 
       <section className="mx-auto max-w-6xl px-4 pb-12 sm:px-6 lg:px-8">
         <GlowPanel>
           <h2 className="font-[var(--font-display)] text-2xl font-semibold text-slate-50">
-            Live whitepaper chapters
+            Whitepaper chapters in-site
           </h2>
           <p className="mt-3 text-sm text-slate-300">
-            These links point directly to the published Sagitta whitepaper chapters.
+            Each chapter has a local page for fast browsing plus a direct GitBook source link.
           </p>
           <div className="mt-6 grid gap-3 md:grid-cols-2">
             {whitepaper.links.map((item) => (
-              <Link
-                key={item.title}
-                href={item.href}
-                target="_blank"
-                rel="noreferrer"
-                className="nexus-subitem p-4 transition hover:border-white/35"
-              >
+              <div key={item.slug} className="nexus-subitem p-4">
                 <p className="font-[var(--font-display)] text-base font-semibold text-slate-100">
                   {item.title}
                 </p>
                 <p className="mt-2 text-sm text-slate-300">{item.summary}</p>
-              </Link>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  <Link href={`/docs/${item.slug}`} className="nexus-button-primary px-3 py-1.5 text-xs">
+                    Read
+                  </Link>
+                  <Link
+                    href={item.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="nexus-button-ghost px-3 py-1.5 text-xs"
+                  >
+                    Open GitBook
+                  </Link>
+                </div>
+              </div>
             ))}
           </div>
         </GlowPanel>

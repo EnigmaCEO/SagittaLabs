@@ -1,9 +1,10 @@
+import Image from "next/image";
 import Link from "next/link";
 import { CtaBanner } from "@/components/sections/CtaBanner";
 import { PageHero } from "@/components/sections/PageHero";
 import { GlowPanel } from "@/components/ui/GlowPanel";
 import { buildPageMetadata } from "@/lib/metadata";
-import { whitepaper } from "@/lib/whitepaper";
+import { getWhitepaperChapterBySlug, whitepaper } from "@/lib/whitepaper";
 
 export const metadata = buildPageMetadata({
   title: "Protocol",
@@ -13,11 +14,13 @@ export const metadata = buildPageMetadata({
 });
 
 export default function ProtocolPage() {
+  const executiveSummary = getWhitepaperChapterBySlug("executive-summary");
+
   return (
     <div>
       <PageHero
         eyebrow="Protocol"
-        title="Sagitta Protocol Whitepaper"
+        title="Sagitta Protocol"
         description="A fiduciary-grade protocol doctrine for autonomous capital continuity, reserve-backed protection, and deterministic settlement."
       />
 
@@ -27,8 +30,8 @@ export default function ProtocolPage() {
             Identity, scope, and fiduciary posture
           </h2>
           <p className="mt-3 text-slate-300">
-            Sagitta Protocol is defined as autonomous capital infrastructure with hard protection constraints.
-            The whitepaper frames this as protocol law with deterministic behavior rather than discretionary finance.
+            {executiveSummary?.introduction ??
+              "Sagitta Protocol is defined as autonomous capital infrastructure with hard protection constraints. The whitepaper frames this as protocol law with deterministic behavior rather than discretionary finance."}
           </p>
           <div className="mt-6 grid gap-5 md:grid-cols-2">
             <div>
@@ -69,6 +72,39 @@ export default function ProtocolPage() {
             </Link>
           </div>
         </GlowPanel>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-4 pb-12 sm:px-6 lg:px-8">
+        <div className="nexus-section-head">
+          <p className="nexus-label nexus-label-center">Executive Summary</p>
+          <h2 className="nexus-section-title">Whitepaper text integrated into protocol sections</h2>
+        </div>
+        <div className="mt-8 grid gap-5 md:grid-cols-2">
+          {executiveSummary?.sections.slice(0, 4).map((section) => (
+            <GlowPanel key={section.heading}>
+              <h3 className="font-[var(--font-display)] text-xl font-semibold text-slate-50">
+                {section.heading}
+              </h3>
+              {section.content ? <p className="mt-3 text-sm text-slate-300">{section.content}</p> : null}
+              {section.paragraphs?.length ? (
+                <div className="mt-3 space-y-3 text-sm text-slate-300">
+                  {section.paragraphs.map((paragraph) => (
+                    <p key={paragraph}>{paragraph}</p>
+                  ))}
+                </div>
+              ) : null}
+              {section.bullets?.length ? (
+                <ul className="mt-4 space-y-2 text-sm text-slate-200">
+                  {section.bullets.map((item) => (
+                    <li key={item} className="nexus-subitem rounded-lg px-3 py-2">
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              ) : null}
+            </GlowPanel>
+          ))}
+        </div>
       </section>
 
       <section className="mx-auto max-w-6xl px-4 pb-12 sm:px-6 lg:px-8">
@@ -124,6 +160,41 @@ export default function ProtocolPage() {
                 </li>
               ))}
             </ol>
+          </GlowPanel>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-4 pb-12 sm:px-6 lg:px-8">
+        <div className="nexus-section-head">
+          <p className="nexus-label nexus-label-center">Protocol Diagram</p>
+          <h2 className="mt-4 font-[var(--font-body)] text-5xl font-medium leading-[0.96] tracking-[-0.025em] text-[#bcc6d3] sm:text-6xl lg:text-7xl">
+            Capital Flow Diagram
+          </h2>
+          <p className="mx-auto mt-5 max-w-3xl text-base text-slate-300 sm:text-lg">
+            Custody, reserve insurance, allocation execution, settlement, and continuity controls in one operating map.
+          </p>
+        </div>
+        <div className="mt-8">
+          <GlowPanel className="p-4 sm:p-6">
+            <div className="overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-2 sm:p-3">
+              <Image
+                src="/capital-flow-diagram.jpg"
+                alt="Sagitta Protocol capital flow diagram"
+                width={768}
+                height={1152}
+                className="mx-auto h-auto w-full max-w-2xl rounded-xl"
+              />
+            </div>
+            <div className="mt-5 flex justify-center">
+              <Link
+                href="/capital-flow-diagram.jpg"
+                target="_blank"
+                rel="noreferrer"
+                className="nexus-button-ghost px-4 py-2 text-sm"
+              >
+                Open full-size diagram
+              </Link>
+            </div>
           </GlowPanel>
         </div>
       </section>

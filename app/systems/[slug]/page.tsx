@@ -23,16 +23,16 @@ export async function generateMetadata({ params }: ProductDetailPageProps) {
   const product = getProductBySlug(slug);
   if (!product) {
     return buildPageMetadata({
-      title: "Product",
-      description: "Sagitta Labs product details.",
-      path: `/products/${slug}`
+      title: "System",
+      description: "Sagitta Labs system details.",
+      path: `/systems/${slug}`
     });
   }
 
   return buildPageMetadata({
     title: product.name,
     description: product.shortDescription,
-    path: `/products/${product.slug}`
+    path: `/systems/${product.slug}`
   });
 }
 
@@ -49,7 +49,7 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
 
   return (
     <div>
-      <PageHero eyebrow="Product" title={product.name} description={product.shortDescription} />
+      <PageHero eyebrow="System" title={product.name} description={product.shortDescription} />
 
       <section className="mx-auto max-w-6xl px-4 pb-12 sm:px-6 lg:px-8">
         <GlowPanel className="overflow-hidden p-0">
@@ -69,7 +69,7 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
               <p className="mt-5 text-sm text-slate-300">{product.longDescription}</p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <Link href="/contact" className="nexus-button-primary px-4 py-2 text-sm">
-                  Contact product team
+                  Contact systems team
                 </Link>
                 {product.externalHref ? (
                   <Link
@@ -104,7 +104,7 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
               Related protocol subsystems
             </h2>
             <p className="mt-3 text-sm text-slate-300">
-              Product behavior remains constrained by protocol architecture and continuity doctrine.
+              System behavior remains constrained by protocol architecture and continuity doctrine.
             </p>
             <div className="mt-4 space-y-2">
               {whitepaper.subsystems.slice(0, 4).map((item) => (

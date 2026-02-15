@@ -22,7 +22,7 @@ export const productCatalog: ProductDefinition[] = [
       "The Autonomous Allocation Agent is the protocol's quantitative decision layer, generating risk-aware target allocations from market, reserve, and system-health telemetry.",
     logoSrc: "/AAA/logo.png",
     splashSrc: "/AAA/splash.png",
-    internalHref: "/products/aaa",
+    internalHref: "/systems/aaa",
     externalHref: "https://aaa.sagitta.systems/",
     highlights: [
       "Periodic policy cycle for deterministic allocation updates.",
@@ -41,7 +41,7 @@ export const productCatalog: ProductDefinition[] = [
       "The Continuity Engine enforces survival doctrine during instability, coordinating protective mode transitions, emergency evacuation paths, and staged recovery across protocol subsystems.",
     logoSrc: "/SCE/logo.png",
     splashSrc: "/SCE/splash.png",
-    internalHref: "/products/continuity-engine",
+    internalHref: "/systems/continuity-engine",
     highlights: [
       "Failure-scenario detection and continuity mode switching.",
       "Evacuation orchestration when risk exceeds protocol thresholds.",

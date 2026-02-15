@@ -20,7 +20,7 @@ const projects = [
   {
     title: "Sagitta Autonomous Allocation Agent",
     role: "Autonomous allocation and risk policy engine.",
-    href: "/products"
+    href: "/systems"
   },
   {
     title: "Sagitta Continuity Engine",

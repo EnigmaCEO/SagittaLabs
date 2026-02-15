@@ -24,6 +24,20 @@ export function SiteFooter() {
             <p className="mt-2 text-sm text-slate-400">
               Autonomous continuity and capital systems for resilient infrastructure.
             </p>
+            <div className="mt-4 space-y-1 text-xs text-slate-400">
+              <p>
+                Contact:{" "}
+                <Link href={`mailto:${siteConfig.contact.email}`} className="text-slate-300 hover:text-white">
+                  {siteConfig.contact.email}
+                </Link>
+              </p>
+              <p>
+                Press:{" "}
+                <Link href={`mailto:${siteConfig.contact.pressEmail}`} className="text-slate-300 hover:text-white">
+                  {siteConfig.contact.pressEmail}
+                </Link>
+              </p>
+            </div>
             <Link
               href={whitepaper.url}
               target="_blank"
@@ -70,6 +84,11 @@ export function SiteFooter() {
               <div>
                 <p className="text-xs tracking-[0.18em] text-slate-500 uppercase">Resources</p>
                 <ul className="mt-3 space-y-2 text-sm text-slate-300">
+                  <li>
+                    <Link href="/media" className="transition hover:text-white">
+                      Media & Press Kit
+                    </Link>
+                  </li>
                   <li>
                     <Link href="/downloads/sagitta-protocol-whitepaper.pdf" className="transition hover:text-white">
                       Whitepaper PDF

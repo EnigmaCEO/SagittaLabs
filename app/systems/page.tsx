@@ -8,25 +8,25 @@ import { productCatalog } from "@/lib/products";
 import { whitepaper } from "@/lib/whitepaper";
 
 export const metadata = buildPageMetadata({
-  title: "Products",
+  title: "Systems",
   description:
-    "Dedicated product pages for Sagitta Autonomous Allocation Agent and Sagitta Continuity Engine.",
-  path: "/products"
+    "Dedicated systems pages for Sagitta Autonomous Allocation Agent and Sagitta Continuity Engine.",
+  path: "/systems"
 });
 
 export default function ProductsPage() {
   return (
     <div>
       <PageHero
-        eyebrow="Products"
-        title="Sagitta product suite"
-        description="Dedicated product sections and pages for the Autonomous Allocation Agent and Continuity Engine."
+        eyebrow="Systems"
+        title="Sagitta Systems"
+        description="Dedicated infrastructure system sections and pages for the Autonomous Allocation Agent and Continuity Engine."
       />
 
       <section className="mx-auto max-w-6xl px-4 pb-12 sm:px-6 lg:px-8">
         <div className="nexus-section-head">
-          <p className="nexus-label nexus-label-center">Product Profiles</p>
-          <h2 className="nexus-section-title">Explore each product in detail</h2>
+          <p className="nexus-label nexus-label-center">System Profiles</p>
+          <h2 className="nexus-section-title">Explore each system in detail</h2>
         </div>
         <div className="mt-8 grid gap-5 md:grid-cols-2">
           {productCatalog.map((product) => (
@@ -51,7 +51,7 @@ export default function ProductsPage() {
                 <p className="mt-3 text-sm text-slate-300">{product.shortDescription}</p>
                 <div className="mt-6 flex flex-wrap gap-3">
                   <Link href={product.internalHref} className="nexus-button-primary px-4 py-2 text-sm">
-                    View product page
+                    View system page
                   </Link>
                   {product.externalHref ? (
                     <Link
@@ -91,10 +91,10 @@ export default function ProductsPage() {
       <section className="mx-auto max-w-6xl px-4 pb-12 sm:px-6 lg:px-8">
         <GlowPanel>
           <h2 className="font-[var(--font-display)] text-2xl font-semibold text-slate-50">
-            Product-to-protocol mapping
+            System-to-protocol mapping
           </h2>
           <p className="mt-3 text-slate-300">
-            Both products inherit protocol constraints, reserve discipline, and continuity doctrine from the whitepaper
+            Both systems inherit protocol constraints, reserve discipline, and continuity doctrine from the whitepaper
             architecture.
           </p>
           <div className="mt-5 grid gap-3 md:grid-cols-2 lg:grid-cols-3">
@@ -110,11 +110,10 @@ export default function ProductsPage() {
 
       <CtaBanner
         title="Need implementation guidance?"
-        description="Review individual product pages and contact Sagitta Labs for deployment support."
+        description="Review individual system pages and contact Sagitta Labs for deployment support."
         ctaLabel="Talk to Sagitta Labs"
         ctaHref="/contact"
       />
     </div>
   );
 }
-

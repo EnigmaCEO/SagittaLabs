@@ -43,7 +43,7 @@ export function HeroSection() {
             Sagitta Labs
           </p>
           <h1 className="mt-4 font-[var(--font-body)] text-5xl font-medium leading-[0.98] tracking-[-0.025em] text-[#bcc6d3] sm:text-6xl lg:text-7xl">
-            Sagitta Labs &mdash; Autonomous Capital Systems
+            Sagitta Labs Autonomous Capital Systems
           </h1>
           <p className="mt-6 max-w-xl text-[1.04rem] leading-relaxed text-[#6f86a7] sm:text-[1.12rem]">
             Designing doctrine, policy engines, and capital components that keep infrastructure resilient under uncertainty.
