@@ -48,6 +48,9 @@ export function HeroSection() {
           <p className="mt-6 max-w-xl text-[1.04rem] leading-relaxed text-[#6f86a7] sm:text-[1.12rem]">
             For DAOs, on-chain treasuries, and protocol operators, Sagitta enforces insurance-first allocation, deterministic loss accountability, and continuity governance through stress events.
           </p>
+          <p className="mt-4 max-w-xl text-sm font-medium text-slate-200">
+            When stablecoins depeg, chains halt, or governance fails, Sagitta enforces continuity without discretionary human intervention.
+          </p>
           <div className="mt-7 grid gap-3 sm:grid-cols-3">
             <div className="nexus-subitem rounded-xl px-3 py-2.5">
               <p className="text-[11px] tracking-[0.16em] text-slate-400 uppercase">Who Benefits</p>

@@ -29,25 +29,10 @@ const projects = [
   }
 ];
 
-const ecosystemSignals = [
-  {
-    title: "GitHub Activity",
-    detail:
-      "Track protocol documentation, chapter updates, and implementation artifacts in one public source trail.",
-    href: "/docs"
-  },
-  {
-    title: "Contributor Incentives",
-    detail:
-      "Clear pathways for researchers, builders, and reviewers to participate in doctrine and implementation hardening.",
-    href: "/contact"
-  },
-  {
-    title: "Integrations and Partners",
-    detail:
-      "Role-based architecture supports treasury, custody, and execution integrations without redesigning core invariants.",
-    href: "/use-cases"
-  }
+const nonNegotiables = [
+  "Depositors never absorb loss before protocol reserve ordering is exhausted.",
+  "No discretionary human override during stress-mode continuity transitions.",
+  "The system remains operational when any single pillar fails."
 ] as const;
 
 export default function HomePage() {
@@ -63,6 +48,9 @@ export default function HomePage() {
           <h2 className="nexus-section-title">
             Capital systems designed for continuity
           </h2>
+          <p className="mx-auto mt-4 max-w-3xl text-sm text-slate-300">
+            If stablecoins depeg, execution venues fail, or governance degrades, these are the layers that prevent uncontrolled downside transfer.
+          </p>
         </div>
         <div className="mt-8 grid gap-5 md:grid-cols-3">
           {projects.map((project) => (
@@ -91,6 +79,9 @@ export default function HomePage() {
             </h3>
             <p className="mt-3 text-sm text-slate-300">
               {whitepaper.summary}
+            </p>
+            <p className="mt-3 text-sm text-slate-200">
+              Without these rules, loss handling defaults to discretion and participants inherit failure by surprise.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Link
@@ -128,6 +119,9 @@ export default function HomePage() {
           <h2 className="nexus-section-title">
             Full system stack from custody to continuity
           </h2>
+          <p className="mx-auto mt-4 max-w-3xl text-sm text-slate-300">
+            If one authority fails, layered separation prevents custody, insurance, and execution risk from collapsing together.
+          </p>
         </div>
         <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {whitepaper.subsystems.map((item) => (
@@ -145,6 +139,9 @@ export default function HomePage() {
         <div className="nexus-section-head">
           <p className="nexus-label nexus-label-center">Scenario Coverage</p>
           <h2 className="nexus-section-title">Applied use cases for continuity infrastructure</h2>
+          <p className="mx-auto mt-4 max-w-3xl text-sm text-slate-300">
+            These scenarios map exactly where conventional protocols break and where continuity doctrine must take over.
+          </p>
         </div>
         <div className="mt-8 grid gap-5 md:grid-cols-3">
           <GlowPanel className="h-full">
@@ -181,19 +178,27 @@ export default function HomePage() {
 
       <section className="mx-auto max-w-6xl px-4 pb-12 sm:px-6 lg:px-8">
         <div className="nexus-section-head">
-          <p className="nexus-label nexus-label-center">Community and Ecosystem</p>
-          <h2 className="nexus-section-title">Trust signals for adoption and contribution</h2>
+          <p className="nexus-label nexus-label-center">Protocol Hard Constraints</p>
+          <h2 className="nexus-section-title">Non-negotiables in public view</h2>
+          <p className="mx-auto mt-4 max-w-3xl text-sm text-slate-300">
+            Trust is not promised here. It is enforced by invariants, failure doctrine, and explicit constraints on what the system refuses to do.
+          </p>
         </div>
         <div className="mt-8 grid gap-5 md:grid-cols-3">
-          {ecosystemSignals.map((item) => (
-            <GlowPanel key={item.title} className="h-full">
-              <h3 className="font-[var(--font-display)] text-xl font-semibold text-slate-50">{item.title}</h3>
-              <p className="mt-3 text-sm text-slate-300">{item.detail}</p>
-              <Link href={item.href} className="nexus-button-ghost mt-6 inline-flex px-4 py-2 text-sm">
-                Learn more
-              </Link>
+          {nonNegotiables.map((item) => (
+            <GlowPanel key={item} className="h-full">
+              <p className="text-xs tracking-[0.16em] text-slate-500 uppercase">System Constraint</p>
+              <p className="mt-3 font-[var(--font-display)] text-xl font-semibold text-slate-50">{item}</p>
             </GlowPanel>
           ))}
+        </div>
+        <div className="mt-6 flex flex-wrap justify-center gap-3">
+          <Link href="/docs/system-invariants" className="nexus-button-primary px-5 py-2.5 text-sm">
+            Review invariants
+          </Link>
+          <Link href="/protocol#threat-matrix" className="nexus-button-ghost px-5 py-2.5 text-sm">
+            Review threat doctrine
+          </Link>
         </div>
       </section>
 
@@ -218,8 +223,8 @@ export default function HomePage() {
 
       <CtaBanner
         title="Build with Sagitta Labs"
-        description="Partner on autonomous capital infrastructure aligned with whitepaper invariants, reserve discipline, and continuity doctrine."
-        ctaLabel="Contact Us"
+        description="Partner with Sagitta Labs to integrate continuity doctrine into treasury, protocol, or allocator infrastructure."
+        ctaLabel="Discuss integration"
         ctaHref="/contact"
       />
     </div>
