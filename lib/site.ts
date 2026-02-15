@@ -6,7 +6,9 @@ export const siteConfig = {
   ogImage: "https://sagittalabs.com/og-sagitta-labs.jpg",
   contact: {
     email: "contact@sagittalabs.com",
-    pressEmail: "press@sagittalabs.com"
+    pressEmail: "press@sagittalabs.com",
+    partnershipsEmail: "partnerships@sagittalabs.com",
+    researchEmail: "research@sagittalabs.com"
   },
   logo: {
     primary: "/Favicon_64x64-01.png",

@@ -23,20 +23,50 @@ export default function ContactPage() {
         <div className="grid gap-5 md:grid-cols-2">
           <GlowPanel>
             <h2 className="font-[var(--font-display)] text-xl font-semibold text-slate-50">General Email</h2>
+            <p className="mt-2 text-sm text-slate-300">
+              For partnerships, implementation questions, and technical inquiries.
+            </p>
             <Link
               href={`mailto:${siteConfig.contact.email}`}
-              className="mt-2 inline-flex text-sm text-cyanflare underline-offset-4 hover:underline"
+              className="mt-4 inline-flex text-sm text-cyanflare underline-offset-4 hover:underline"
             >
               {siteConfig.contact.email}
             </Link>
           </GlowPanel>
           <GlowPanel>
             <h2 className="font-[var(--font-display)] text-xl font-semibold text-slate-50">Press Email</h2>
+            <p className="mt-2 text-sm text-slate-300">
+              For media requests, interviews, and publication coordination.
+            </p>
             <Link
               href={`mailto:${siteConfig.contact.pressEmail}`}
-              className="mt-2 inline-flex text-sm text-cyanflare underline-offset-4 hover:underline"
+              className="mt-4 inline-flex text-sm text-cyanflare underline-offset-4 hover:underline"
             >
               {siteConfig.contact.pressEmail}
+            </Link>
+          </GlowPanel>
+          <GlowPanel>
+            <h2 className="font-[var(--font-display)] text-xl font-semibold text-slate-50">Partnerships</h2>
+            <p className="mt-2 text-sm text-slate-300">
+              For institutional partnerships and protocol integration planning.
+            </p>
+            <Link
+              href={`mailto:${siteConfig.contact.partnershipsEmail}`}
+              className="mt-4 inline-flex text-sm text-cyanflare underline-offset-4 hover:underline"
+            >
+              {siteConfig.contact.partnershipsEmail}
+            </Link>
+          </GlowPanel>
+          <GlowPanel>
+            <h2 className="font-[var(--font-display)] text-xl font-semibold text-slate-50">Research Collaboration</h2>
+            <p className="mt-2 text-sm text-slate-300">
+              For continuity modeling, simulations, and collaborative research workstreams.
+            </p>
+            <Link
+              href={`mailto:${siteConfig.contact.researchEmail}`}
+              className="mt-4 inline-flex text-sm text-cyanflare underline-offset-4 hover:underline"
+            >
+              {siteConfig.contact.researchEmail}
             </Link>
           </GlowPanel>
         </div>

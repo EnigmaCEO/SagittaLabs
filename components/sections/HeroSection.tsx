@@ -46,10 +46,13 @@ export function HeroSection() {
             Resilient capital infrastructure for systems that cannot fail
           </h1>
           <p className="mt-6 max-w-xl text-[1.04rem] leading-relaxed text-[#6f86a7] sm:text-[1.12rem]">
-            For DAOs, on-chain treasuries, and protocol operators, Sagitta enforces insurance-first allocation, deterministic loss accountability, and continuity governance through stress events.
+            Sagitta builds autonomous capital infrastructure that protects reserves, allocates assets under risk constraints, and maintains continuity during market stress.
           </p>
           <p className="mt-4 max-w-xl text-sm font-medium text-slate-200">
             When stablecoins depeg, chains halt, or governance fails, Sagitta enforces continuity without discretionary human intervention.
+          </p>
+          <p className="mt-3 max-w-xl text-xs tracking-[0.05em] text-slate-400">
+            Built by systems architects focused on resilient capital infrastructure.
           </p>
           <div className="mt-7 grid gap-3 sm:grid-cols-3">
             <div className="nexus-subitem rounded-xl px-3 py-2.5">
