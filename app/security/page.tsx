@@ -38,6 +38,18 @@ const bountyScopes = [
   "Governance or continuity-mode abuse paths with high-impact outcomes."
 ];
 
+const currentAssumptions = [
+  "External execution venues and dependency providers can degrade or fail unexpectedly.",
+  "Governance participation can become adversarial or unavailable during stress windows.",
+  "Telemetry and oracle inputs can be delayed, noisy, or partially compromised."
+] as const;
+
+const openAttackSurfaces = [
+  "Cross-layer interactions between allocation policy outputs and execution constraints.",
+  "Failure-mode transitions where substitution logic and settlement timing interact.",
+  "Reserve accounting edge cases during prolonged drawdown and partial recovery."
+] as const;
+
 export default function SecurityPage() {
   return (
     <div>
@@ -56,6 +68,41 @@ export default function SecurityPage() {
               <p className="mt-3 text-sm text-slate-300">{item.note}</p>
             </GlowPanel>
           ))}
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-4 pb-12 sm:px-6 lg:px-8">
+        <div className="grid gap-5 md:grid-cols-2">
+          <GlowPanel>
+            <h2 className="font-[var(--font-display)] text-2xl font-semibold text-slate-50">
+              Current assumptions and unaudited areas
+            </h2>
+            <p className="mt-3 text-sm text-slate-300">
+              Security maturity requires explicit assumptions. These are active design assumptions under ongoing review:
+            </p>
+            <ul className="mt-4 space-y-2 text-sm text-slate-200">
+              {currentAssumptions.map((item) => (
+                <li key={item} className="nexus-subitem px-4 py-3">
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </GlowPanel>
+          <GlowPanel>
+            <h2 className="font-[var(--font-display)] text-2xl font-semibold text-slate-50">
+              Open attack surfaces under active hardening
+            </h2>
+            <p className="mt-3 text-sm text-slate-300">
+              These areas receive priority analysis before formal audit publication:
+            </p>
+            <ul className="mt-4 space-y-2 text-sm text-slate-200">
+              {openAttackSurfaces.map((item) => (
+                <li key={item} className="nexus-subitem px-4 py-3">
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </GlowPanel>
         </div>
       </section>
 

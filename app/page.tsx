@@ -223,7 +223,7 @@ export default function HomePage() {
 
       <CtaBanner
         title="Build with Sagitta Labs"
-        description="Partner with Sagitta Labs to integrate continuity doctrine into treasury, protocol, or allocator infrastructure."
+        description="Partner with Sagitta Labs if you run treasury, protocol, or allocator systems where failure is unacceptable."
         ctaLabel="Discuss integration"
         ctaHref="/contact"
       />

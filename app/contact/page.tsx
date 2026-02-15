@@ -17,7 +17,7 @@ export default function ContactPage() {
       <PageHero
         eyebrow="Contact"
         title="Contact Sagitta Labs"
-        description="Use the form below to discuss whitepaper chapter implementation, systems deployment, and infrastructure integration."
+        description="Use this if you operate capital systems where failure is unacceptable and need continuity-grade protocol infrastructure."
       />
       <section className="mx-auto max-w-6xl px-4 pb-8 sm:px-6 lg:px-8">
         <div className="grid gap-5 md:grid-cols-2">

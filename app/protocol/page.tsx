@@ -74,6 +74,45 @@ export default function ProtocolPage() {
         </GlowPanel>
       </section>
 
+      <section className="mx-auto max-w-6xl px-4 pb-12 sm:px-6 lg:px-8">
+        <div className="grid gap-5 md:grid-cols-2">
+          <GlowPanel>
+            <h2 className="font-[var(--font-display)] text-2xl font-semibold text-slate-50">
+              What this protocol refuses to do
+            </h2>
+            <p className="mt-3 text-sm text-slate-300">
+              These are hard constraints, not policy preferences.
+            </p>
+            <ul className="mt-4 space-y-2 text-sm text-slate-200">
+              <li className="nexus-subitem px-4 py-3">
+                No discretionary human override during stress-mode continuity transitions.
+              </li>
+              <li className="nexus-subitem px-4 py-3">
+                No growth expansion that violates reserve coverage thresholds.
+              </li>
+              <li className="nexus-subitem px-4 py-3">
+                No settlement path that bypasses protocol-level loss accountability.
+              </li>
+            </ul>
+          </GlowPanel>
+          <GlowPanel>
+            <h2 className="font-[var(--font-display)] text-2xl font-semibold text-slate-50">
+              Capital flow under stress
+            </h2>
+            <p className="mt-3 text-sm text-slate-300">
+              When depegs, venue failures, or governance compromise occur, routing shifts in deterministic order:
+            </p>
+            <ol className="mt-4 space-y-2 text-sm text-slate-200">
+              <li className="nexus-subitem px-4 py-3">1. Threat detection and protective contraction.</li>
+              <li className="nexus-subitem px-4 py-3">2. Escrow exposure isolation and execution throttle.</li>
+              <li className="nexus-subitem px-4 py-3">3. Reserve absorbs protocol-level downside in defined order.</li>
+              <li className="nexus-subitem px-4 py-3">4. Continuity Engine applies substitution and evacuation doctrine.</li>
+              <li className="nexus-subitem px-4 py-3">5. Deterministic settlement and staged recovery.</li>
+            </ol>
+          </GlowPanel>
+        </div>
+      </section>
+
       <section id="executive-summary" className="mx-auto max-w-6xl px-4 pb-12 sm:px-6 lg:px-8">
         <div className="nexus-section-head">
           <p className="nexus-label nexus-label-center">Executive Summary</p>

@@ -38,6 +38,24 @@ const useCases = [
       "Protocol invariants, reserve supremacy, and explicit failure-threshold responses bound governance and execution authority.",
     outcome:
       "Risk is governed by protocol law with lower reliance on ad hoc governance discretion."
+  },
+  {
+    title: "Chain Halt and Infrastructure Disruption",
+    challenge:
+      "A primary chain or service dependency degrades and settlement assumptions no longer hold.",
+    response:
+      "Continuity doctrine applies substitution routes and degraded-mode posture while preserving accounting and reserve constraints.",
+    outcome:
+      "Operational continuity persists without forcing immediate discretionary migration."
+  },
+  {
+    title: "Allocator Failure and Reserve Drawdown",
+    challenge:
+      "Allocation quality deteriorates while reserve coverage trends toward protective thresholds.",
+    response:
+      "AAA authority contracts, Treasury deployment tightens, and Reserve-first ordering enforces solvency before growth.",
+    outcome:
+      "Protocol transitions to survival-first posture until recovery criteria are satisfied."
   }
 ] as const;
 
@@ -55,11 +73,11 @@ export default function UseCasesPage() {
       <PageHero
         eyebrow="Use Cases"
         title="Scenario-driven proof of continuity posture"
-        description="How Sagitta behaves when capital systems face instability, counterparty failure, and governance stress."
+        description="How Sagitta behaves during depegs, chain halts, governance capture attempts, allocator failure, and reserve drawdown."
       />
 
       <section className="mx-auto max-w-6xl px-4 pb-12 sm:px-6 lg:px-8">
-        <div className="grid gap-5 md:grid-cols-3">
+        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {useCases.map((item) => (
             <GlowPanel key={item.title} className="h-full">
               <h2 className="font-[var(--font-display)] text-xl font-semibold text-slate-50">{item.title}</h2>

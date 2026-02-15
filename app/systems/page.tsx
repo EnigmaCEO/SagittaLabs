@@ -14,6 +14,24 @@ export const metadata = buildPageMetadata({
   path: "/systems"
 });
 
+const authorityBoundaries = [
+  {
+    axis: "Autonomous",
+    definition:
+      "Policy cycles, risk contraction, and continuity mode transitions execute from doctrine triggers without discretionary intervention."
+  },
+  {
+    axis: "Rule-Bound",
+    definition:
+      "Treasury, reserve, settlement, and execution routes are constrained by invariants and predefined ordering."
+  },
+  {
+    axis: "Non-Interventionist",
+    definition:
+      "Human operators can tune parameters and integrations, but cannot bypass stress safeguards or overwrite protection doctrine."
+  }
+] as const;
+
 export default function ProductsPage() {
   return (
     <div>
@@ -68,6 +86,25 @@ export default function ProductsPage() {
             </GlowPanel>
           ))}
         </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-4 pb-12 sm:px-6 lg:px-8">
+        <GlowPanel>
+          <h2 className="font-[var(--font-display)] text-2xl font-semibold text-slate-50">
+            Authority boundaries in plain terms
+          </h2>
+          <p className="mt-3 text-sm text-slate-300">
+            Serious operators need explicit boundaries for what is autonomous, what is constrained by protocol law, and where human intervention stops.
+          </p>
+          <div className="mt-5 grid gap-3 md:grid-cols-3">
+            {authorityBoundaries.map((item) => (
+              <div key={item.axis} className="nexus-subitem p-4">
+                <p className="text-xs tracking-[0.16em] text-slate-400 uppercase">{item.axis}</p>
+                <p className="mt-2 text-sm text-slate-200">{item.definition}</p>
+              </div>
+            ))}
+          </div>
+        </GlowPanel>
       </section>
 
       <section className="mx-auto max-w-6xl px-4 pb-12 sm:px-6 lg:px-8">
