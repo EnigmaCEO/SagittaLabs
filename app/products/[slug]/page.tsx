@@ -9,22 +9,23 @@ import { allProductRouteSlugs, getProductBySlug } from "@/lib/products";
 import { whitepaper } from "@/lib/whitepaper";
 
 type ProductDetailPageProps = {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 };
 
 export function generateStaticParams() {
   return allProductRouteSlugs.map((slug) => ({ slug }));
 }
 
-export function generateMetadata({ params }: ProductDetailPageProps) {
-  const product = getProductBySlug(params.slug);
+export async function generateMetadata({ params }: ProductDetailPageProps) {
+  const { slug } = await params;
+  const product = getProductBySlug(slug);
   if (!product) {
     return buildPageMetadata({
       title: "Product",
       description: "Sagitta Labs product details.",
-      path: `/products/${params.slug}`
+      path: `/products/${slug}`
     });
   }
 
@@ -35,13 +36,14 @@ export function generateMetadata({ params }: ProductDetailPageProps) {
   });
 }
 
-export default function ProductDetailPage({ params }: ProductDetailPageProps) {
-  const product = getProductBySlug(params.slug);
+export default async function ProductDetailPage({ params }: ProductDetailPageProps) {
+  const { slug } = await params;
+  const product = getProductBySlug(slug);
   if (!product) {
     notFound();
   }
 
-  if (params.slug !== product.slug) {
+  if (slug !== product.slug) {
     redirect(product.internalHref);
   }
 
@@ -125,4 +127,3 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
     </div>
   );
 }
-

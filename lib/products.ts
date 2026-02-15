@@ -61,6 +61,9 @@ for (const product of productCatalog) {
 }
 
 export function getProductBySlug(slug: string) {
+  if (!slug) {
+    return undefined;
+  }
   return slugToProduct.get(slug.toLowerCase());
 }
 
