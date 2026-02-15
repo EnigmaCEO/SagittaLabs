@@ -1,0 +1,7 @@
+Sagitta Implementation Sketches Placeholder
+
+This file stands in for early integration sketches connecting:
+- Sagitta Protocol doctrine layers
+- Sagitta AAA policy runtime
+- Sagitta SPC project components
+

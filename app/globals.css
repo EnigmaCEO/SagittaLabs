@@ -1,0 +1,215 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-0: #000000;
+  --bg-1: #01030b;
+  --bg-2: #050b21;
+  --line: rgba(120, 145, 255, 0.24);
+  --line-strong: rgba(159, 181, 255, 0.42);
+  --text: #e8edff;
+  --text-muted: #94a7c8;
+  --button-a: #4f68ff;
+  --button-b: #1bc8ff;
+}
+
+* {
+  border-color: var(--line);
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  color: var(--text);
+  background: #000000;
+}
+
+a {
+  text-decoration: none;
+}
+
+::selection {
+  color: #f7f9ff;
+  background: rgba(79, 104, 255, 0.6);
+}
+
+.soft-grid {
+  background-image:
+    linear-gradient(to right, rgba(92, 112, 220, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(92, 112, 220, 0.02) 1px, transparent 1px);
+  background-size: 42px 42px;
+}
+
+@keyframes heroFloat {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -8px, 0);
+  }
+}
+
+@keyframes heroPulse {
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.82;
+    transform: scale(1.06);
+  }
+}
+
+@keyframes heroOrbit {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes heroGlowBreathe {
+  0%,
+  100% {
+    opacity: 0.66;
+  }
+  50% {
+    opacity: 0.9;
+  }
+}
+
+@layer components {
+  .site-canvas {
+    background:
+      radial-gradient(1200px 760px at 8% -8%, rgba(34, 51, 154, 0.5) 0%, rgba(14, 23, 76, 0.24) 34%, transparent 62%),
+      radial-gradient(900px 620px at 78% 54%, rgba(36, 58, 181, 0.16) 0%, transparent 62%),
+      linear-gradient(180deg, var(--bg-2) 0%, var(--bg-1) 28%, var(--bg-0) 100%);
+  }
+
+  .nexus-shell {
+    border: 1px solid var(--line);
+    border-radius: 30px;
+    background:
+      radial-gradient(circle at 84% 16%, rgba(88, 104, 255, 0.28), transparent 34%),
+      linear-gradient(180deg, rgba(9, 22, 49, 0.82), rgba(5, 10, 24, 0.9));
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.08),
+      0 24px 70px rgba(1, 4, 13, 0.5);
+  }
+
+  .nexus-panel {
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    background:
+      linear-gradient(180deg, rgba(10, 26, 55, 0.96) 0%, rgba(6, 11, 27, 0.96) 100%);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.06),
+      0 10px 34px rgba(2, 5, 16, 0.45);
+  }
+
+  .nexus-label {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 9999px;
+    border: 1px solid rgba(74, 102, 255, 0.35);
+    background: linear-gradient(180deg, rgba(17, 25, 82, 0.92), rgba(10, 16, 56, 0.92));
+    padding: 0.36rem 0.96rem;
+    font-family: var(--font-display), sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #6f86ff;
+    line-height: 1;
+  }
+
+  .nexus-label-center {
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+  }
+
+  .nexus-section-head {
+    max-width: 56rem;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  .nexus-section-title {
+    margin-top: 1rem;
+    font-family: var(--font-display), sans-serif;
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-weight: 500;
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    color: #b8c0ce;
+  }
+
+  .nexus-subitem {
+    border: 1px solid rgba(170, 188, 255, 0.2);
+    border-radius: 12px;
+    background: linear-gradient(180deg, rgba(15, 28, 58, 0.72), rgba(8, 14, 30, 0.82));
+    color: #d6e1ff;
+  }
+
+  .nexus-button-primary {
+    border-radius: 9999px;
+    background: linear-gradient(95deg, var(--button-a), var(--button-b));
+    color: #ffffff;
+    font-weight: 600;
+    box-shadow: 0 8px 24px rgba(73, 110, 255, 0.34);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+
+  .nexus-button-primary:hover {
+    opacity: 0.92;
+    transform: translateY(-1px);
+  }
+
+  .nexus-button-ghost {
+    border-radius: 9999px;
+    border: 1px solid rgba(170, 188, 255, 0.25);
+    background: rgba(255, 255, 255, 0.02);
+    color: #dce5ff;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+  }
+
+  .nexus-button-ghost:hover {
+    border-color: var(--line-strong);
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  .hero-float {
+    animation: heroFloat 7.4s ease-in-out infinite;
+  }
+
+  .hero-pulse {
+    animation: heroPulse 3.4s ease-in-out infinite;
+  }
+
+  .hero-orbit {
+    animation: heroOrbit 22s linear infinite;
+  }
+
+  .hero-glow {
+    animation: heroGlowBreathe 5.6s ease-in-out infinite;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-float,
+  .hero-pulse,
+  .hero-orbit,
+  .hero-glow {
+    animation: none !important;
+  }
+}
