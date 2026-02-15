@@ -3,14 +3,16 @@ import { cn } from "@/lib/utils";
 type GlowPanelProps = {
   children: React.ReactNode;
   className?: string;
+  interactive?: boolean;
 };
 
-export function GlowPanel({ children, className }: GlowPanelProps) {
+export function GlowPanel({ children, className, interactive = false }: GlowPanelProps) {
   return (
     <div
       data-reveal
       className={cn(
         "nexus-panel relative overflow-hidden p-6",
+        interactive && "panel-hover",
         className
       )}
     >

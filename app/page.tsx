@@ -93,14 +93,14 @@ export default function HomePage() {
     <div>
       <HeroSection />
 
-      <section className="mx-auto max-w-6xl px-4 pb-12 sm:px-6 lg:px-8">
+      <section className="section-divider mx-auto max-w-6xl px-4 pb-14 sm:px-6 lg:px-8 lg:pb-16">
         <div className="nexus-section-head">
           <p className="nexus-label nexus-label-center">Explore Sagitta</p>
           <h2 className="nexus-section-title">Choose your path</h2>
         </div>
         <div className="mt-8 grid gap-5 md:grid-cols-2">
           {audiencePathways.map((pathway) => (
-            <GlowPanel key={pathway.title} className="h-full">
+            <GlowPanel key={pathway.title} className="h-full" interactive>
               <h3 className="font-[var(--font-display)] text-xl font-semibold text-slate-50">
                 {pathway.title}
               </h3>
@@ -113,7 +113,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 pb-12 sm:px-6 lg:px-8">
+      <section className="section-divider mx-auto max-w-6xl px-4 pb-14 sm:px-6 lg:px-8 lg:pb-16">
         <GlowPanel>
           <p className="nexus-label">Plain-Language Orientation</p>
           <h2 className="mt-4 font-[var(--font-display)] text-2xl font-semibold text-slate-50">
@@ -131,7 +131,7 @@ export default function HomePage() {
         </GlowPanel>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 pb-12 sm:px-6 lg:px-8">
+      <section className="section-divider mx-auto max-w-6xl px-4 pb-14 sm:px-6 lg:px-8 lg:pb-16">
         <div className="nexus-section-head">
           <p className="nexus-label nexus-label-center">Problem Context</p>
           <h2 className="nexus-section-title">Problem, failure mode, and protocol response</h2>
@@ -146,7 +146,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 pb-12 sm:px-6 lg:px-8">
+      <section className="section-divider mx-auto max-w-6xl px-4 pb-14 sm:px-6 lg:px-8 lg:pb-16">
         <div className="nexus-section-head">
           <p className="nexus-label nexus-label-center">
             Core Projects
@@ -160,7 +160,7 @@ export default function HomePage() {
         </div>
         <div className="mt-8 grid gap-5 md:grid-cols-3">
           {projects.map((project) => (
-            <GlowPanel key={project.title} className="h-full">
+            <GlowPanel key={project.title} className="h-full" interactive>
               <h3 className="font-[var(--font-display)] text-xl font-semibold text-slate-50">
                 {project.title}
               </h3>
@@ -176,7 +176,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 pb-12 sm:px-6 lg:px-8">
+      <section className="section-divider mx-auto max-w-6xl px-4 pb-14 sm:px-6 lg:px-8 lg:pb-16">
         <GlowPanel>
           <p className="nexus-label">Current Development Focus</p>
           <h2 className="mt-4 font-[var(--font-display)] text-2xl font-semibold text-slate-50">
@@ -192,7 +192,7 @@ export default function HomePage() {
         </GlowPanel>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 pb-12 sm:px-6 lg:px-8">
+      <section className="section-divider mx-auto max-w-6xl px-4 pb-14 sm:px-6 lg:px-8 lg:pb-16">
         {/* Template mapping: staggered feature cards mirror the dense card block below hero in the reference homepage. */}
         <div className="grid gap-5 md:grid-cols-2">
           <GlowPanel className="md:row-span-2">
@@ -233,7 +233,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 pb-12 sm:px-6 lg:px-8">
+      <section className="section-divider mx-auto max-w-6xl px-4 pb-14 sm:px-6 lg:px-8 lg:pb-16">
         <div className="nexus-section-head">
           <p className="nexus-label nexus-label-center">
             Protocol Architecture
@@ -257,7 +257,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 pb-12 sm:px-6 lg:px-8">
+      <section className="section-divider mx-auto max-w-6xl px-4 pb-14 sm:px-6 lg:px-8 lg:pb-16">
         <div className="nexus-section-head">
           <p className="nexus-label nexus-label-center">Scenario Coverage</p>
           <h2 className="nexus-section-title">Applied use cases for continuity infrastructure</h2>
@@ -266,7 +266,7 @@ export default function HomePage() {
           </p>
         </div>
         <div className="mt-8 grid gap-5 md:grid-cols-3">
-          <GlowPanel className="h-full">
+          <GlowPanel className="h-full" interactive>
             <h3 className="font-[var(--font-display)] text-xl font-semibold text-slate-50">
               Stablecoin collapse continuity
             </h3>
@@ -274,7 +274,7 @@ export default function HomePage() {
               Reserve and continuity doctrine enforce protected routing when settlement assets degrade.
             </p>
           </GlowPanel>
-          <GlowPanel className="h-full">
+          <GlowPanel className="h-full" interactive>
             <h3 className="font-[var(--font-display)] text-xl font-semibold text-slate-50">
               Treasury continuity automation
             </h3>
@@ -282,7 +282,7 @@ export default function HomePage() {
               Allocation cycles remain bounded by policy and insurance constraints under volatile conditions.
             </p>
           </GlowPanel>
-          <GlowPanel className="h-full">
+          <GlowPanel className="h-full" interactive>
             <h3 className="font-[var(--font-display)] text-xl font-semibold text-slate-50">
               DeFi risk governance
             </h3>
@@ -298,7 +298,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 pb-12 sm:px-6 lg:px-8">
+      <section className="section-divider mx-auto max-w-6xl px-4 pb-14 sm:px-6 lg:px-8 lg:pb-16">
         <div className="nexus-section-head">
           <p className="nexus-label nexus-label-center">Protocol Hard Constraints</p>
           <h2 className="nexus-section-title">Non-negotiables in public view</h2>
@@ -324,7 +324,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 pb-12 sm:px-6 lg:px-8">
+      <section className="section-divider mx-auto max-w-6xl px-4 pb-14 sm:px-6 lg:px-8 lg:pb-16">
         <GlowPanel>
           <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             <div>
@@ -343,13 +343,13 @@ export default function HomePage() {
         </GlowPanel>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 pb-12 sm:px-6 lg:px-8">
+      <section className="section-divider mx-auto max-w-6xl px-4 pb-14 sm:px-6 lg:px-8 lg:pb-16">
         <div className="nexus-section-head">
           <p className="nexus-label nexus-label-center">Partnership Paths</p>
           <h2 className="nexus-section-title">Direct next steps for collaborators and reviewers</h2>
         </div>
         <div className="mt-8 grid gap-5 md:grid-cols-3">
-          <GlowPanel className="h-full">
+          <GlowPanel className="h-full" interactive>
             <h3 className="font-[var(--font-display)] text-xl font-semibold text-slate-50">Partner with Sagitta</h3>
             <p className="mt-3 text-sm text-slate-300">
               For treasury, protocol, or infrastructure partnerships where continuity is a hard requirement.
@@ -361,7 +361,7 @@ export default function HomePage() {
               {siteConfig.contact.partnershipsEmail}
             </Link>
           </GlowPanel>
-          <GlowPanel className="h-full">
+          <GlowPanel className="h-full" interactive>
             <h3 className="font-[var(--font-display)] text-xl font-semibold text-slate-50">Apply for Research Collaboration</h3>
             <p className="mt-3 text-sm text-slate-300">
               For continuity modeling, doctrine testing, and failure-simulation collaboration.
@@ -373,7 +373,7 @@ export default function HomePage() {
               {siteConfig.contact.researchEmail}
             </Link>
           </GlowPanel>
-          <GlowPanel className="h-full">
+          <GlowPanel className="h-full" interactive>
             <h3 className="font-[var(--font-display)] text-xl font-semibold text-slate-50">Explore Integration</h3>
             <p className="mt-3 text-sm text-slate-300">
               For integration into allocator, treasury, and protocol stacks that cannot accept discretionary failure response.
