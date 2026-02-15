@@ -1,7 +1,235 @@
-Sagitta Implementation Sketches Placeholder
+Good instinct. For a .txt, you want plain, disciplined engineering notes — no formatting dependencies, no markdown tricks, no diagrams that require rendering. Something that reads like a real internal sketch file.
 
-This file stands in for early integration sketches connecting:
-- Sagitta Protocol doctrine layers
-- Sagitta AAA policy runtime
-- Sagitta SPC project components
+Below is a clean, copy-paste-ready .txt implementation sketch.
+It will look legitimate to engineers, reviewers, and institutional readers.
 
+Sagitta Implementation Sketches
+Status: Early integration notes
+Audience: Internal / prospective integrators
+
+This file outlines early implementation sketches connecting:
+
+Sagitta Protocol doctrine layers
+
+Sagitta AAA policy runtime
+
+Sagitta SPC project components
+
+The intent is not to specify final architecture, but to make integration boundaries explicit.
+
+Sketch 1: Doctrine as a First-Class System Artifact
+
+Doctrine is treated as a versioned system artifact, not prose.
+
+Each doctrine version defines:
+
+system invariants (hard constraints)
+
+allowed policy envelopes
+
+regime definitions
+
+exception handling rules
+
+Doctrine versions are immutable once activated.
+Every downstream system references doctrine by version ID.
+
+Consumers:
+
+Protocol components read invariants directly
+
+AAA compiles doctrine into executable policy constraints
+
+SPC mirrors doctrine versions as governance artifacts
+
+Result:
+Every decision and allocation can be traced to an explicit doctrine version.
+
+Sketch 2: AAA Policy Runtime and Decision Emission
+
+AAA operates as a bounded policy execution engine.
+
+Inputs:
+
+normalized portfolio state
+
+market and liquidity snapshot
+
+doctrine-defined regime context
+
+active policy envelope
+
+Processing:
+
+validate inputs against doctrine invariants
+
+execute policy logic under constraints
+
+generate allocation recommendations
+
+produce constraint satisfaction report
+
+Output:
+A single Decision Record containing:
+
+inputs
+
+applied doctrine version
+
+applied policy version
+
+allocation outputs
+
+constraint checks
+
+timestamp and hash
+
+Decision Records are append-only and immutable.
+
+Sketch 3: Decision Records as the System Boundary
+
+Decision Records are the primary interface between:
+
+AAA runtime
+
+execution systems
+
+oversight and governance
+
+Decision Records are:
+
+machine readable
+
+human reviewable
+
+replayable for audit
+
+Execution systems consume Decision Records but do not modify them.
+Oversight systems review Decision Records without issuing discretionary trades.
+
+Result:
+Decision-making and execution remain cleanly separated.
+
+Sketch 4: SPC Oversight Without Discretionary Trading
+
+SPC structures interact with Sagitta through policy and review, not trade selection.
+
+SPC responsibilities:
+
+define investment mandate
+
+approve doctrine and policy envelopes
+
+review Decision Records
+
+ensure compliance and reporting
+
+AAA responsibilities:
+
+generate bounded allocation decisions
+
+document rationale and constraints
+
+operate continuously within approved envelopes
+
+Trade execution occurs through:
+
+custodians
+
+brokers
+
+automated executors
+
+SPC does not intervene at the trade level except under explicit exceptional procedures.
+
+Sketch 5: Policy Envelope Compilation
+
+Human-readable policy intent is compiled into executable constraints.
+
+Inputs:
+
+doctrine invariants
+
+investment mandate
+
+risk class definitions
+
+allowed asset universe
+
+Compilation produces:
+
+position limits
+
+concentration caps
+
+liquidity thresholds
+
+rebalance rules
+
+regime-dependent behavior
+
+Compiled policy envelopes are validated against doctrine before activation.
+Policy versions are locked into Decision Records.
+
+Result:
+Governance controls allocator behavior through compilation, not negotiation.
+
+Sketch 6: Capital and Authority Flow Separation
+
+Authority flow:
+Doctrine -> Policy -> AAA -> Decision Records -> Oversight
+
+Capital flow (variant dependent):
+Deposits -> Custody -> Execution -> Settlement -> Reporting
+
+Authority never flows downstream from execution.
+Capital never flows upstream into governance logic.
+
+This separation is enforced by system design.
+
+Sketch 7: Deployment and Integration Modes
+
+Sagitta supports multiple integration models:
+
+Hosted mode:
+
+AAA runtime operated by Sagitta Labs
+
+external wallets and accounts connected
+
+fastest iteration
+
+Hybrid mode:
+
+policy and reporting hosted
+
+execution agents run locally
+
+decision records synced
+
+On-prem mode:
+
+full runtime deployed in customer environment
+
+doctrine updates pulled from registry
+
+full internal control
+
+All modes share identical doctrine and decision semantics.
+
+Sketch 8: Integrity Anchoring (Optional)
+
+Decision Records may be integrity-anchored via:
+
+append-only logs
+
+external timestamping
+
+blockchain hash anchoring
+
+Only hashes and metadata are anchored.
+Sensitive data remains off-chain.
+
+Purpose is verifiability, not publicity.
+
+End of sketches.
