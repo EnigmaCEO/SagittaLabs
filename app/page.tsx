@@ -53,8 +53,8 @@ const clarityNarrative = [
 
 const currentDevelopmentFocus = [
   "Autonomous Allocation Agent (AAA).",
-  "Protocol treasury and reserve framework.",
-  "Continuity governance modeling."
+  "Protocol dashboard and tesnet deployment.",
+  "Sagitta Continuity Engine (SCE)."
 ] as const;
 
 const audiencePathways = [
