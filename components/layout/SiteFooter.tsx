@@ -65,17 +65,22 @@ export function SiteFooter() {
                 <p className="text-xs tracking-[0.18em] text-slate-500 uppercase">Protocol</p>
                 <ul className="mt-3 space-y-2 text-sm text-slate-300">
                   <li>
-                    <Link href="/protocol" className="transition hover:text-white">
-                      Architecture
+                    <Link href="/protocol#executive-summary" className="transition hover:text-white">
+                      Executive Summary
                     </Link>
                   </li>
                   <li>
-                    <Link href="/docs" className="transition hover:text-white">
-                      Invariants
+                    <Link href="/protocol#architecture-stack" className="transition hover:text-white">
+                      Architecture Stack
                     </Link>
                   </li>
                   <li>
-                    <Link href="/docs" className="transition hover:text-white">
+                    <Link href="/protocol#protocol-diagram" className="transition hover:text-white">
+                      Protocol Diagram
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/protocol#threat-matrix" className="transition hover:text-white">
                       Threat Matrix
                     </Link>
                   </li>

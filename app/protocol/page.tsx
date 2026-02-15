@@ -74,7 +74,7 @@ export default function ProtocolPage() {
         </GlowPanel>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 pb-12 sm:px-6 lg:px-8">
+      <section id="executive-summary" className="mx-auto max-w-6xl px-4 pb-12 sm:px-6 lg:px-8">
         <div className="nexus-section-head">
           <p className="nexus-label nexus-label-center">Executive Summary</p>
           <h2 className="nexus-section-title">Whitepaper text integrated into protocol sections</h2>
@@ -107,7 +107,7 @@ export default function ProtocolPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 pb-12 sm:px-6 lg:px-8">
+      <section id="architecture-stack" className="mx-auto max-w-6xl px-4 pb-12 sm:px-6 lg:px-8">
         <div className="nexus-section-head">
           <p className="nexus-label nexus-label-center">
             Architecture Stack
@@ -135,7 +135,7 @@ export default function ProtocolPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 pb-12 sm:px-6 lg:px-8">
+      <section id="protocol-diagram" className="mx-auto max-w-6xl px-4 pb-12 sm:px-6 lg:px-8">
         <div className="grid gap-5 md:grid-cols-2">
           <GlowPanel>
             <h3 className="font-[var(--font-display)] text-2xl font-semibold text-slate-50">
@@ -199,7 +199,7 @@ export default function ProtocolPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 pb-12 sm:px-6 lg:px-8">
+      <section id="threat-matrix" className="mx-auto max-w-6xl px-4 pb-12 sm:px-6 lg:px-8">
         <GlowPanel>
           <h3 className="font-[var(--font-display)] text-2xl font-semibold text-slate-50">
             Failure and threat matrix
