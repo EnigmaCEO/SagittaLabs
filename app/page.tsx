@@ -348,42 +348,48 @@ export default function HomePage() {
           <p className="nexus-label nexus-label-center">Partnership Paths</p>
           <h2 className="nexus-section-title">Direct next steps for collaborators and reviewers</h2>
         </div>
-        <div className="mt-8 grid gap-5 md:grid-cols-3">
-          <GlowPanel className="h-full" interactive>
+        <div className="mt-10 grid gap-6 md:grid-cols-3">
+          <GlowPanel className="h-full min-h-[300px] flex flex-col" interactive>
             <h3 className="font-[var(--font-display)] text-xl font-semibold text-slate-50">Partner with Sagitta</h3>
             <p className="mt-3 text-sm text-slate-300">
               For treasury, protocol, or infrastructure partnerships where continuity is a hard requirement.
             </p>
-            <Link
-              href={`mailto:${siteConfig.contact.partnershipsEmail}?subject=Partnership%20Inquiry`}
-              className="nexus-button-primary mt-6 inline-flex px-4 py-2 text-sm"
-            >
-              {siteConfig.contact.partnershipsEmail}
-            </Link>
+            <div className="mt-auto pt-6">
+              <Link
+                href={`mailto:${siteConfig.contact.partnershipsEmail}?subject=Partnership%20Inquiry`}
+                className="nexus-button-primary inline-flex px-4 py-2 text-sm"
+              >
+                {siteConfig.contact.partnershipsEmail}
+              </Link>
+            </div>
           </GlowPanel>
-          <GlowPanel className="h-full" interactive>
+          <GlowPanel className="h-full min-h-[300px] flex flex-col" interactive>
             <h3 className="font-[var(--font-display)] text-xl font-semibold text-slate-50">Apply for Research Collaboration</h3>
             <p className="mt-3 text-sm text-slate-300">
               For continuity modeling, doctrine testing, and failure-simulation collaboration.
             </p>
-            <Link
-              href={`mailto:${siteConfig.contact.researchEmail}?subject=Research%20Collaboration`}
-              className="nexus-button-primary mt-6 inline-flex px-4 py-2 text-sm"
-            >
-              {siteConfig.contact.researchEmail}
-            </Link>
+            <div className="mt-auto pt-6">
+              <Link
+                href={`mailto:${siteConfig.contact.researchEmail}?subject=Research%20Collaboration`}
+                className="nexus-button-primary inline-flex px-4 py-2 text-sm"
+              >
+                {siteConfig.contact.researchEmail}
+              </Link>
+            </div>
           </GlowPanel>
-          <GlowPanel className="h-full" interactive>
+          <GlowPanel className="h-full min-h-[300px] flex flex-col" interactive>
             <h3 className="font-[var(--font-display)] text-xl font-semibold text-slate-50">Explore Integration</h3>
             <p className="mt-3 text-sm text-slate-300">
               For integration into allocator, treasury, and protocol stacks that cannot accept discretionary failure response.
             </p>
-            <Link
-              href={`mailto:${siteConfig.contact.partnershipsEmail}?subject=Integration%20Inquiry`}
-              className="nexus-button-primary mt-6 inline-flex px-4 py-2 text-sm"
-            >
-              Start integration discussion
-            </Link>
+            <div className="mt-auto pt-6">
+              <Link
+                href={`mailto:${siteConfig.contact.partnershipsEmail}?subject=Integration%20Inquiry`}
+                className="nexus-button-primary inline-flex px-4 py-2 text-sm"
+              >
+                Start integration discussion
+              </Link>
+            </div>
           </GlowPanel>
         </div>
       </section>
