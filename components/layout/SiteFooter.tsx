@@ -90,6 +90,16 @@ export function SiteFooter() {
                 <p className="text-xs tracking-[0.18em] text-slate-500 uppercase">Resources</p>
                 <ul className="mt-3 space-y-2 text-sm text-slate-300">
                   <li>
+                    <Link href="/use-cases" className="transition hover:text-white">
+                      Use Cases
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/security" className="transition hover:text-white">
+                      Security Hub
+                    </Link>
+                  </li>
+                  <li>
                     <Link href="/media" className="transition hover:text-white">
                       Media & Press Kit
                     </Link>

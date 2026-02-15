@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Manrope, Space_Grotesk } from "next/font/google";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
+import { RevealProvider } from "@/components/ui/RevealProvider";
 import { siteConfig } from "@/lib/site";
 import "./globals.css";
 
@@ -74,6 +75,7 @@ export default function RootLayout({
       <body
         className={`${displayFont.variable} ${bodyFont.variable} font-[var(--font-body)] antialiased`}
       >
+        <RevealProvider />
         <div className="relative min-h-screen">
           <div className="site-canvas pointer-events-none absolute inset-0 -z-20" aria-hidden />
           <SiteHeader />

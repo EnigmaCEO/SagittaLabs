@@ -8,6 +8,7 @@ type GlowPanelProps = {
 export function GlowPanel({ children, className }: GlowPanelProps) {
   return (
     <div
+      data-reveal
       className={cn(
         "nexus-panel relative overflow-hidden p-6",
         className

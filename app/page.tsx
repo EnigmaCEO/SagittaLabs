@@ -29,6 +29,27 @@ const projects = [
   }
 ];
 
+const ecosystemSignals = [
+  {
+    title: "GitHub Activity",
+    detail:
+      "Track protocol documentation, chapter updates, and implementation artifacts in one public source trail.",
+    href: "/docs"
+  },
+  {
+    title: "Contributor Incentives",
+    detail:
+      "Clear pathways for researchers, builders, and reviewers to participate in doctrine and implementation hardening.",
+    href: "/contact"
+  },
+  {
+    title: "Integrations and Partners",
+    detail:
+      "Role-based architecture supports treasury, custody, and execution integrations without redesigning core invariants.",
+    href: "/use-cases"
+  }
+] as const;
+
 export default function HomePage() {
   return (
     <div>
@@ -118,6 +139,81 @@ export default function HomePage() {
             </GlowPanel>
           ))}
         </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-4 pb-12 sm:px-6 lg:px-8">
+        <div className="nexus-section-head">
+          <p className="nexus-label nexus-label-center">Scenario Coverage</p>
+          <h2 className="nexus-section-title">Applied use cases for continuity infrastructure</h2>
+        </div>
+        <div className="mt-8 grid gap-5 md:grid-cols-3">
+          <GlowPanel className="h-full">
+            <h3 className="font-[var(--font-display)] text-xl font-semibold text-slate-50">
+              Stablecoin collapse continuity
+            </h3>
+            <p className="mt-3 text-sm text-slate-300">
+              Reserve and continuity doctrine enforce protected routing when settlement assets degrade.
+            </p>
+          </GlowPanel>
+          <GlowPanel className="h-full">
+            <h3 className="font-[var(--font-display)] text-xl font-semibold text-slate-50">
+              Treasury continuity automation
+            </h3>
+            <p className="mt-3 text-sm text-slate-300">
+              Allocation cycles remain bounded by policy and insurance constraints under volatile conditions.
+            </p>
+          </GlowPanel>
+          <GlowPanel className="h-full">
+            <h3 className="font-[var(--font-display)] text-xl font-semibold text-slate-50">
+              DeFi risk governance
+            </h3>
+            <p className="mt-3 text-sm text-slate-300">
+              Governance actions stay inside invariant and threat-matrix guardrails during stress and recovery.
+            </p>
+          </GlowPanel>
+        </div>
+        <div className="mt-6 flex justify-center">
+          <Link href="/use-cases" className="nexus-button-primary px-5 py-2.5 text-sm">
+            View all use cases
+          </Link>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-4 pb-12 sm:px-6 lg:px-8">
+        <div className="nexus-section-head">
+          <p className="nexus-label nexus-label-center">Community and Ecosystem</p>
+          <h2 className="nexus-section-title">Trust signals for adoption and contribution</h2>
+        </div>
+        <div className="mt-8 grid gap-5 md:grid-cols-3">
+          {ecosystemSignals.map((item) => (
+            <GlowPanel key={item.title} className="h-full">
+              <h3 className="font-[var(--font-display)] text-xl font-semibold text-slate-50">{item.title}</h3>
+              <p className="mt-3 text-sm text-slate-300">{item.detail}</p>
+              <Link href={item.href} className="nexus-button-ghost mt-6 inline-flex px-4 py-2 text-sm">
+                Learn more
+              </Link>
+            </GlowPanel>
+          ))}
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-4 pb-12 sm:px-6 lg:px-8">
+        <GlowPanel>
+          <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+            <div>
+              <p className="nexus-label">Security and Risk Transparency</p>
+              <h2 className="mt-3 font-[var(--font-display)] text-2xl font-semibold text-slate-50">
+                Audit posture, threat modeling, and disclosure pathways
+              </h2>
+              <p className="mt-3 max-w-2xl text-sm text-slate-300">
+                Capital resilience depends on visible controls. Review audit status, failure scenarios, and vulnerability reporting paths.
+              </p>
+            </div>
+            <Link href="/security" className="nexus-button-primary px-5 py-2.5 text-sm">
+              Open Security Hub
+            </Link>
+          </div>
+        </GlowPanel>
       </section>
 
       <CtaBanner

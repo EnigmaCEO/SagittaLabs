@@ -17,7 +17,9 @@ export const siteConfig = {
   nav: [
     { label: "Home", href: "/" },
     { label: "Protocol", href: "/protocol" },
+    { label: "Use Cases", href: "/use-cases" },
     { label: "Systems", href: "/systems" },
+    { label: "Security", href: "/security" },
     { label: "Docs", href: "/docs" },
     { label: "Media", href: "/media" },
     { label: "Contact", href: "/contact" }

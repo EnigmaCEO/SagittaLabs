@@ -1,8 +1,22 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { siteConfig } from "@/lib/site";
+import { cn } from "@/lib/utils";
 
 export function SiteHeader() {
+  const pathname = usePathname();
+
+  const isActive = (href: string) => {
+    if (href === "/") {
+      return pathname === "/";
+    }
+
+    return pathname === href || pathname.startsWith(`${href}/`);
+  };
+
   return (
     <header className="relative z-30">
       <div className="mx-auto max-w-6xl px-4 pb-3 pt-5 sm:px-6 lg:px-8">
@@ -28,7 +42,11 @@ export function SiteHeader() {
                   <li key={item.href}>
                     <Link
                       href={item.href}
-                      className="rounded-full px-3 py-1.5 text-slate-300"
+                      className={cn(
+                        "relative rounded-full px-3 py-1.5 text-slate-300 transition-colors duration-200 after:absolute after:right-3 after:bottom-0 after:left-3 after:h-px after:origin-left after:scale-x-0 after:bg-cyan-300/85 after:transition-transform after:duration-300 after:content-[''] hover:text-slate-100 hover:after:scale-x-100",
+                        isActive(item.href) &&
+                          "bg-white/5 text-white after:scale-x-100"
+                      )}
                     >
                       {item.label}
                     </Link>

@@ -43,17 +43,37 @@ export function HeroSection() {
             Sagitta Labs
           </p>
           <h1 className="mt-4 font-[var(--font-body)] text-5xl font-medium leading-[0.98] tracking-[-0.025em] text-[#bcc6d3] sm:text-6xl lg:text-7xl">
-            Sagitta Labs Autonomous Capital Systems
+            Resilient capital infrastructure for systems that cannot fail
           </h1>
           <p className="mt-6 max-w-xl text-[1.04rem] leading-relaxed text-[#6f86a7] sm:text-[1.12rem]">
-            Designing doctrine, policy engines, and capital components that keep infrastructure resilient under uncertainty.
+            For DAOs, on-chain treasuries, and protocol operators, Sagitta enforces insurance-first allocation, deterministic loss accountability, and continuity governance through stress events.
           </p>
-          <div className="mt-8">
+          <div className="mt-7 grid gap-3 sm:grid-cols-3">
+            <div className="nexus-subitem rounded-xl px-3 py-2.5">
+              <p className="text-[11px] tracking-[0.16em] text-slate-400 uppercase">Who Benefits</p>
+              <p className="mt-1.5 text-xs text-slate-200">DAOs, treasuries, and critical infrastructure operators.</p>
+            </div>
+            <div className="nexus-subitem rounded-xl px-3 py-2.5">
+              <p className="text-[11px] tracking-[0.16em] text-slate-400 uppercase">How</p>
+              <p className="mt-1.5 text-xs text-slate-200">Vault, Reserve, AAA, and Continuity Engine enforce policy by design.</p>
+            </div>
+            <div className="nexus-subitem rounded-xl px-3 py-2.5">
+              <p className="text-[11px] tracking-[0.16em] text-slate-400 uppercase">Why Better</p>
+              <p className="mt-1.5 text-xs text-slate-200">Safety constraints are structural, not dependent on operator discretion.</p>
+            </div>
+          </div>
+          <div className="mt-8 flex flex-wrap gap-3">
             <Link
               href="/protocol"
               className="nexus-button-primary px-6 py-3 text-sm"
             >
               Explore the Protocol
+            </Link>
+            <Link
+              href="/use-cases"
+              className="nexus-button-ghost px-6 py-3 text-sm"
+            >
+              View Use Cases
             </Link>
           </div>
         </div>
